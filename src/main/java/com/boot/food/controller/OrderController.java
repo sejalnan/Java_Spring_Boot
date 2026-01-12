@@ -3,6 +3,7 @@ package com.boot.food.controller;
 import com.boot.food.Exception.OrderNotFound;
 import com.boot.food.Interface.OrderService;
 import com.boot.food.model.Order;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +23,7 @@ public class OrderController {
     @PostMapping
     public ResponseEntity<Order> createOrder(@RequestBody Order order){
         try{
-            return ResponseEntity.ok(service.createOrder(order));
+            return new ResponseEntity <> (service.createOrder(order), HttpStatus.CREATED);
         } catch (OrderNotFound e) {
             System.out.println(e);
             return ResponseEntity.badRequest().build();

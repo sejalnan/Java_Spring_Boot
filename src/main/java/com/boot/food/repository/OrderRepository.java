@@ -27,7 +27,7 @@ public class OrderRepository {
         Order existingOrder=findOrderById(id);
         if(existingOrder!=null){
             existingOrder.setAmount(order.getAmount());
-            existingOrder.setpId(order.getpId());
+            existingOrder.setProductId(order.getProductId());
             existingOrder.setQuantity(order.getQuantity());
             existingOrder.setStatus(order.getStatus());
 

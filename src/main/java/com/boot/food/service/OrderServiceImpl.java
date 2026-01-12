@@ -18,7 +18,7 @@ public class OrderServiceImpl  implements OrderService {
 
     @Override
     public Order createOrder(Order order) {
-        Order newOrder=new Order(order.getAmount(),order.getpId(),order.getQuantity(),order.getStatus());
+        Order newOrder=new Order(order.getAmount(),order.getProductId(),order.getQuantity(),order.getStatus());
         repository.save(newOrder);
         return newOrder;
     }

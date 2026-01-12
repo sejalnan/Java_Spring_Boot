@@ -4,20 +4,31 @@ import java.util.UUID;
 
 public class Order {
     private String orderId;
-    private int pId;
+    private int ProductId;
     private int quantity;
     private double amount;
     private String status;
 
 
-
-    public Order(double amount, int pId, int quantity, String status) {
+    public Order(String orderId, int productId, int quantity, double amount, String status) {
+        this.orderId = orderId;
+        ProductId = productId;
+        this.quantity = quantity;
         this.amount = amount;
-        this.orderId = UUID.randomUUID().toString();
-        this.pId = pId;
+        this.status = status;
+    }
+
+    public Order(double amount, int productId, int quantity, String status) {
+        this.amount = amount;
+        ProductId = productId;
         this.quantity = quantity;
         this.status = status;
     }
+
+    public Order(){
+
+    }
+
 
     public String getOrderId() {
         return orderId;
@@ -27,12 +38,13 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public int getpId() {
-        return pId;
+    public int getProductId() {
+
+        return ProductId;
     }
 
-    public void setpId(int pId) {
-        this.pId = pId;
+    public void setProductId(int ProductId) {
+        this.ProductId= ProductId;
     }
 
     public int getQuantity() {
